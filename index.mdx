@@ -1,0 +1,56 @@
+import {
+    Title,
+    ImageSplit,
+    TextSplit,
+    Footer
+} from "./components";
+
+import { theme as deckTheme, Styles } from "./theme";
+import './assets/fontawesome/css/all.css';
+
+export const theme = deckTheme;
+
+<Styles />
+<Title/>
+<Footer/>
+
+---
+
+<ImageSplit title="Do you remember?" image="//localhost:8008/assets/bicycle-first-try.gif"/>
+<Footer/>
+
+---
+
+# After a While
+<Footer/>
+
+---
+
+<img src="//localhost:8008/assets/bicycle-perfect.gif" style="width: 100%; height: 100%; padding: 40px"/>
+
+---
+
+# About Me
+<Footer/>
+
+---
+
+<Styles />
+<TextSplit image="//localhost:8008/assets/about-me-min.jpg">
+
+<h3 style="margin-block-end: 2em">Jan-Niklas Wortmann</h3>
+<ul>
+    <li>Software Developer</li>
+    <li><span className="primary">RxJS</span> Core Team Member</li>
+    <li>Angular Meetup Organizer</li>
+</ul>
+
+</TextSplit>
+<Footer/>
+
+
+---
+
+# The end
+
+---
