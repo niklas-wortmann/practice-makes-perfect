@@ -3,16 +3,16 @@ import React from "react";
 
 const style = {
     display: "flex",
-    "justify-content": "center",
-    "align-items": "center",
-    "flex-direction": "row",
+    "justifyContent": "center",
+    "alignItems": "center",
+    "flexDirection": "row",
     "width": "100%",
     "height": "100%",    
 }
 
 const containerStyles = {...style};
 
-const containerStylesReverse = {...style, ...{"flex-direction": "row-reverse"}};
+const containerStylesReverse = {...style, ...{"flexDirection": "row-reverse"}};
 
 const flexItemStyle = css`
     flex: 0 0 50%;
@@ -30,14 +30,15 @@ const imageStyles = css`
 const childrenContainerStyles = css`
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 50%;
+    height: 100%;
 `;
 
 export const TextSplit = (props) => (
     <div css={!props.reverse ? containerStyles : containerStylesReverse}>
       <div css={{...flexItemStyle, ...childrenContainerStyles}}>{props.children}</div>
-      <div css={{...flexItemStyle, ...imageStyles}} style={{"background-image": `url(${props.image})`}}></div>
+      <div css={{...flexItemStyle, ...imageStyles}} style={{"backgroundImage": `url(${props.image})`}}></div>
     </div> 
   );
