@@ -5,8 +5,8 @@ import {select} from 'd3-selection'
 import {theme} from '../theme';
 
 const imageContainerStyle = css`
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     background-size: contain;
     background-position: 50% 50%;
     background-repeat: no-repeat;

@@ -6,7 +6,8 @@ import {
     Footer,
     AboutMe,
     CycleFlowDiagram,
-    Quote
+    Quote,
+    Table
 } from "./components";
 
 import { theme as deckTheme, Styles } from "./theme";
@@ -60,6 +61,18 @@ export const theme = deckTheme;
 
 <Styles />
 <Text>Have you ever <span class="primary" style="display: block">learned</span> a foreign language?</Text>
+<Footer/>
+
+---
+
+<Table titleLeft="German" titleRight="English" 
+data={[["Hallo", "hello"], ["Banane", "banana"], ["Code", "code"], ["Kindergarten", "kindergarten"], ["Ohrwurm", "???", "ear worm"], ["Dreikäsehoch", "???","three cheese high"]]}/>
+<Footer/>
+
+---
+
+<Table titleLeft="Reactive" titleRight="Imperative" 
+data={[["first", "array[0]"], ["toArray", "[...array]"], ["filter", "filter"], ["map", "map"], ["windowToggle", "¯\\_(ツ)_/¯", "???"], ["dematerialize", "¯\\_(ツ)_/¯" ,"???"]]}/>
 <Footer/>
 
 ---

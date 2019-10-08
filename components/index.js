@@ -7,6 +7,6 @@ export * from "./AboutMe"
 export * from "./CycleFlow";
 export * from "./Quote";
 export * from "./Text";
-
+export * from "./Table";
 
 
