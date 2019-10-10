@@ -2,16 +2,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injector } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { AppComponent } from './app.component';
+import { CarouselModule } from './carousel/carousel.module'
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CarouselModule
   ],
   providers: [],
-  entryComponents: [AppComponent]
+  entryComponents: [AppComponent],
+  // bootstrap: [AppComponent]
 })
 export class AppModule {
 

@@ -4,11 +4,21 @@ import { interval } from 'rxjs';
 @Component({
   selector: 'app-root',
   template: `
-    <span>{{obs$ | async}}</span>
+
+  <app-carousel>
+  <div appCarouselItem class="item">
+    <span>1</span>
+  </div>
+  <div appCarouselItem class="item">
+    <span>2</span>
+  </div>
+  <div appCarouselItem class="item">
+    <span>3</span>
+  </div>
+</app-carousel>
   `,
-  styles: [],
+  styleUrls: ['./app.component.scss'],
   encapsulation: ViewEncapsulation.ShadowDom
 })
 export class AppComponent {
-  obs$ = interval(3000);
 }
