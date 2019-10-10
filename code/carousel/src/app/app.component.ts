@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+    <span>{{obs$ | async}}</span>
+  `,
+  styles: [],
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class AppComponent {
-  title = 'carousel';
+  obs$ = interval(3000);
 }

@@ -8,5 +8,6 @@ export * from "./CycleFlow";
 export * from "./Quote";
 export * from "./Text";
 export * from "./Table";
+export * from "./WebComponent";
 
 

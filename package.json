@@ -8,8 +8,11 @@
   },
   "name": "slides",
   "scripts": {
-    "serve": "http-server -p 8008",
+    "serve": "http-server -p 8008 --gzip",
     "start": "mdx-deck index.mdx"
   },
-  "version": "0.0.0"
+  "version": "0.0.0",
+  "dependencies": {
+    "react-helmet": "^5.2.1"
+  }
 }
