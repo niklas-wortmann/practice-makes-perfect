@@ -4,7 +4,7 @@ import {Helmet} from "react-helmet";
 
 
 export const WebComponent = () => (
-<div>
+<div style={{margin: "50px"}}>
     <Helmet>
         <script src="//localhost:8008/assets/elements.js"></script>
     </Helmet>
