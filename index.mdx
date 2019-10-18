@@ -8,9 +8,14 @@ import {
     CycleFlowDiagram,
     Quote,
     Table,
-    WebComponent
+    WebComponent,
+    AnimationFrameExample
 } from "./components";
+import {
+  vsDark
+} from "@code-surfer/themes";
 import { theme as deckTheme, Styles } from "./theme";
+import { CodeSurfer } from "code-surfer"
 import './assets/fontawesome/css/all.css';
 export const theme = deckTheme;
 
@@ -100,12 +105,76 @@ data={[["first", "array[0]"], ["toArray", "[...array]"], ["filter", "filter"], [
 
 ---
 
-# Call to Action
+<div style="width: 100%; height: 100%; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url('//localhost:8008/assets/rxjs7.png')"></div>
 <Footer/>
 
 ---
 
-# The end
+<CodeSurfer theme={vsDark}>
+
+```ts 1:8 file=./code/typing-example.ts title="Improved Typings"
+```
+
+```ts 6:12 file=./code/typing-example.ts title="Proper Type Inference for generator functions"
+```
+
+```ts 14:18 file=./code/typing-example.ts title="Improved Typings for concat Operator"
+```
+
+```ts 20:24 file=./code/typing-example.ts title="Improved Typings for reduce and scan Operator"
+```
+
+```ts 26:30 file=./code/typing-example.ts title="Properly infer Type with Boolean constructor"
+```
+
+</CodeSurfer>
+<Footer/>
+
+
+---
+
+<CodeSurfer theme={vsDark}>
+
+```ts 2:5 file=./code/animation-frame-example.ts title="AnimationFrame Observable"
+```
+
+```ts 7:19 file=./code/animation-frame-example.ts title="Use for smooth animations"
+```
+
+```ts 21:28 file=./code/animation-frame-example.ts title="Place Element"
+```
+
+```ts 30:32 file=./code/animation-frame-example.ts title="Let it animate"
+```
+
+</CodeSurfer>
+<Footer/>
+
+
+---
+
+<div style="display: flex; flex-direction: column; height: 100%; align-items: center">
+<h1> Show it to me</h1>
+<AnimationFrameExample/>
+</div>
+<Footer/>
+
+---
+
+<TextSplit image="//localhost:8008/assets/practice.gif">
+<h1> Practice with ... </h1>
+<ul>
+    <li> Redo the same </li>
+    <li> Drag N' Drop </li>
+    <li> Typeahead Search </li>
+    <li> Longpolling </li>
+</ul>
+</TextSplit>
+<Footer/>
+
+---
+
+# Thanks a lot for having me
 <Footer/>
 
 ---

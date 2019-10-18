@@ -28,7 +28,7 @@ const hrStyles = css`
 
 export const Title = () => (
   <div css={containerStyles}>
-    <h1 css={headlineStyles}>Practice <span className="primary">makes</span> perfect</h1>
+    <h1 css={headlineStyles}>Practice <span className="primary">makes</span> Perfect</h1>
     <hr css={hrStyles}/>
     <h2 css={sublineStyles}>when it comes to <span className="primary">RxJS</span></h2>
   </div>
