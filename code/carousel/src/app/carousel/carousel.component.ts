@@ -1,6 +1,6 @@
-import { fromEvent, Subject, merge, interval, race } from 'rxjs';
+import { fromEvent, Subject, merge, interval, race, animationFrameScheduler } from 'rxjs';
 import { AfterContentInit, Component, ContentChildren, ElementRef, QueryList, OnInit, OnDestroy } from '@angular/core';
-import { map, scan, takeLast, takeUntil, tap, switchMap,filter, mapTo, share, repeatWhen } from 'rxjs/operators';
+import { map, takeLast, takeUntil, tap, switchMap,filter, mapTo, share, repeatWhen, observeOn } from 'rxjs/operators';
 
 import { CarouselItemDirective } from './carousel-item.directive';
 import { preventEventPropagation } from './util';
@@ -60,6 +60,7 @@ export class CarouselComponent implements OnInit, AfterContentInit, OnDestroy {
         preventEventPropagation
       )
     ).pipe(
+      observeOn(animationFrameScheduler),
       takeUntil(race(fromEvent(nativeElement, 'touchend'), fromEvent(nativeElement, 'mouseup'))),
       map((event) => event.pageX),
       map((pageX) => Math.round(startEvent.pageX - pageX)),
