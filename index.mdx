@@ -11,13 +11,12 @@ import {
     WebComponent,
     AnimationFrameExample
 } from "./components";
-import {
-  vsDark
-} from "@code-surfer/themes";
-import { theme as deckTheme, Styles } from "./theme";
+import { theme as deckTheme, Styles, vsDarkReal } from "./theme";
 import { CodeSurfer } from "code-surfer"
 import './assets/fontawesome/css/all.css';
 export const theme = deckTheme;
+
+
 
 <Styles />
 <Title/>
@@ -110,7 +109,7 @@ data={[["first", "array[0]"], ["toArray", "[...array]"], ["filter", "filter"], [
 
 ---
 
-<CodeSurfer theme={vsDark}>
+<CodeSurfer theme={vsDarkReal}>
 
 ```ts 1:8 file=./code/typing-example.ts title="Improved Typings"
 ```
@@ -133,7 +132,7 @@ data={[["first", "array[0]"], ["toArray", "[...array]"], ["filter", "filter"], [
 
 ---
 
-<CodeSurfer theme={vsDark}>
+<CodeSurfer theme={vsDarkReal}>
 
 ```ts 2:5 file=./code/animation-frame-example.ts title="AnimationFrame Observable"
 ```

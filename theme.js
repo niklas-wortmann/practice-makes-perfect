@@ -1,6 +1,9 @@
 import { Global, css } from "@emotion/core";
 import { themes } from "mdx-deck";
 import React from "react";
+import {
+  vsDark
+} from "@code-surfer/themes";
 
 
 // Purple background = #a457d4
@@ -16,6 +19,26 @@ export const theme = {
     text: "white"
   }
 };
+
+export const vsDarkReal = {...vsDark }
+// , ...{ 
+//   styles: {
+//     CodeSurfer: {
+//       code: {
+//         backgroundColor: "#000"
+//       },
+//       pre: {
+//         backgroundColor: "#000"
+//       },
+//       title: {
+//         backgroundColor: "#000"
+//       }
+//     }
+//   }
+// }};
+
+console.log(vsDarkReal.styles);
+
 
 export const Styles = () => (
   <Global styles={css`

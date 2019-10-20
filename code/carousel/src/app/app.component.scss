@@ -7,6 +7,12 @@
   background-color: grey;
   color:white;
   font-size: 30px;
+
+  * {
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .app-carousel {

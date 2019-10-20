@@ -4,18 +4,17 @@ import { interval } from 'rxjs';
 @Component({
   selector: 'app-root',
   template: `
-
   <app-carousel>
-  <div appCarouselItem class="item">
-    <span>1</span>
-  </div>
-  <div appCarouselItem class="item">
-    <span>2</span>
-  </div>
-  <div appCarouselItem class="item">
-    <span>3</span>
-  </div>
-</app-carousel>
+    <div appCarouselItem class="item">
+      <div style="background-image: url('https://source.unsplash.com/random?1')"></div>
+    </div>
+    <div appCarouselItem class="item">
+      <div style="background-image: url('https://source.unsplash.com/random?2')"></div>
+    </div>
+    <div appCarouselItem class="item">
+      <div style="background-image: url('https://source.unsplash.com/random?3')"></div>
+    </div>
+  </app-carousel>
   `,
   styleUrls: ['./app.component.scss'],
   encapsulation: ViewEncapsulation.ShadowDom

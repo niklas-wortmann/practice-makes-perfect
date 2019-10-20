@@ -14,7 +14,7 @@ import { CarouselModule } from './carousel/carousel.module'
   ],
   providers: [],
   entryComponents: [AppComponent],
-  // bootstrap: [AppComponent]
+  //bootstrap: [AppComponent]
 })
 export class AppModule {
 
