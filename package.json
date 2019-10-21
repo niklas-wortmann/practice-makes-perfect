@@ -10,13 +10,13 @@
     "rxjs": "^7.0.0-alpha.0",
     "website-pdf": "3.0.8"
   },
-  "name": "slides",
+  "name": "rxjs-practice-makes-perfect",
   "scripts": {
     "serve": "http-server -p 8008 --gzip",
     "start": "mdx-deck index.mdx",
-    "build": "mdx-deck build index.mdx --basepath=/practice-makes-perfect && mv public docs",
+    "build": "mdx-deck  build index.mdx --basePath=\"/practice-makes-perfect/\" && rm -rf docs && mv public docs",
     "export:pdf": "website-pdf http://localhost:8000/print -o deck.pdf",
     "export:image": "npx capture-website-cli http://localhost:8000 --output=deck.png"
   },
-  "version": "0.0.0"
+  "version": "1.0.0"
 }
