@@ -1,7 +1,5 @@
-import * as d3 from "d3";
 import {css} from "@emotion/core";
 import React, {Component} from 'react'
-import {select} from 'd3-selection'
 import {theme} from '../theme';
 
 const imageContainerStyle = css`
