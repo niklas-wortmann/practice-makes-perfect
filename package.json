@@ -4,6 +4,7 @@
     "d3": "5.12.0",
     "d3-scale": "^3.1.0",
     "gatsby-theme-mdx-deck": "^3.0.13",
+    "gh-pages": "^2.1.1",
     "http-server": "^0.11.1",
     "mdx-deck": "^3.0.9",
     "raw-loader": "^3.1.0",
@@ -15,9 +16,11 @@
   "scripts": {
     "serve": "http-server -p 8008 --gzip",
     "start": "mdx-deck index.mdx",
+    "test": "echo \"there are no tests\"",
     "build": "mdx-deck  build index.mdx --basePath=\"/practice-makes-perfect/\" && rm -rf docs && mv public docs",
     "export:pdf": "website-pdf http://localhost:8000/print -o deck.pdf",
-    "export:image": "npx capture-website-cli http://localhost:8000 --output=deck.png"
+    "export:image": "npx capture-website-cli http://localhost:8000 --output=deck.png",
+    "publish-deck": "gh-pages -d docs"
   },
   "version": "1.0.0"
 }
