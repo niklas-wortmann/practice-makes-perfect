@@ -4,7 +4,7 @@
 
 [[redirects]]
   from = "/static/elements.js"
-  to = "/static/elements.js"
+  to = "/static/elements.js.gz"
   status = 200
 
 
