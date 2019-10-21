@@ -3,6 +3,12 @@
   command = "echo 'default context'"
 
 [[redirects]]
+  from = "/static/elements.js"
+  to = "/static/elements.js"
+  status = 200
+
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
