@@ -19,7 +19,7 @@ const webcomponentStyles = css`
 export const WebComponent = () => (
 <div css={containerStyles}>
     <Helmet>
-        <script src="//localhost:8008/assets/elements.js"></script>
+        <script src='./static/elements.js'></script>
     </Helmet>
     <rxjs-slider css={webcomponentStyles}></rxjs-slider>
 </div>

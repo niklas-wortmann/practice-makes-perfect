@@ -37,9 +37,6 @@ export const vsDarkReal = {...vsDark }
 //   }
 // }};
 
-console.log(vsDarkReal.styles);
-
-
 export const Styles = () => (
   <Global styles={css`
     .primary {

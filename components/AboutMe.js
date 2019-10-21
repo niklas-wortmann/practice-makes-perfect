@@ -2,6 +2,10 @@ import { css } from "@emotion/core";
 import { TextSplit } from "./TextSplit";
 import React from "react";
 
+import meJpg from './../assets/about-me-min.jpg';
+import rxjsSvg from './../assets/rxjs-logo.svg';
+import angularSvg from './../assets/angular-logo.svg';
+
 const listItemStyles = css`
     display: flex;
     align-items: inherit;
@@ -29,7 +33,7 @@ const steakStyles = css`
 `;
 
 export const AboutMe = (props) => (
-    <TextSplit image="//localhost:8008/assets/about-me-min.jpg">
+    <TextSplit image={meJpg}>
         <h3>Jan-Niklas Wortmann</h3>
         <ul css={listContainerStyles} >
             <li>
@@ -40,13 +44,13 @@ export const AboutMe = (props) => (
             </li>
             <li>
                 <div css={listItemStyles}>
-                    <img src="//localhost:8008/assets/rxjs-logo.svg" css={imagestyles} />
+                    <img src={rxjsSvg} css={imagestyles} />
                     <span>Core Team Member</span>
                 </div>
             </li>
             <li>
                 <div css={listItemStyles}>
-                    <img src="//localhost:8008/assets/angular-logo.svg" css={imagestyles} />
+                    <img src={angularSvg} css={imagestyles} />
                     <span>Meetup Organizer</span>
                 </div>
             </li>

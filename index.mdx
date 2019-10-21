@@ -13,7 +13,12 @@ import { theme as deckTheme, Styles, vsDarkReal } from "./theme";
 import { CodeSurfer } from "code-surfer"
 export const theme = deckTheme;
 
-
+import bicycleGif from './assets/bicycle-first-try.gif'
+import bicyclePerfectGif from './assets/bicycle-perfect.gif'
+import tagCloudPng from './assets/tag-cloud.png';
+import liveCodingGif from './assets/live-coding.gif';
+import rxjs7Png from './assets/rxjs7.png';
+import practiceGif from './assets/practice.gif';
 
 <Styles />
 <Title/>
@@ -21,7 +26,7 @@ export const theme = deckTheme;
 
 ---
 
-<ImageSplit title="Do you remember?" image="//localhost:8008/assets/bicycle-first-try.gif"/>
+<ImageSplit title="Do you remember?" image={bicycleGif}/>
 <Footer/>
 
 ---
@@ -31,7 +36,7 @@ export const theme = deckTheme;
 
 ---
 
-<img src="//localhost:8008/assets/bicycle-perfect.gif" style="width: 100%; height: 100%; padding: 40px"/>
+<img src={bicyclePerfectGif} style="width: 100%; height: 100%; padding: 40px"/>
 
 ---
 
@@ -50,7 +55,14 @@ export const theme = deckTheme;
 
 ---
 
-<div style="width: 100%; height: 100%; background-size: contain; background-position: 50% 50%; background-repeat: no-repeat; background-image: url('//localhost:8008/assets/tag-cloud.png')"></div>
+<div style={{
+    width: "100%",
+    height: "100%", 
+    backgroundSize: "contain", 
+    backgroundPosition: "50% 50%",
+    backgroundRepeat: "no-repeat",
+    backgroundImage: `url(${tagCloudPng})`
+}}></div>
 
 ---
 
@@ -84,7 +96,7 @@ data={[["first", "array[0]"], ["toArray", "[...array]"], ["filter", "filter"], [
 ---
 
 <h1>Live Coding Time</h1>
-<img src="//localhost:8008/assets/live-coding.gif" style="width: 100%; height: 100%; padding-left: 4em; padding-right: 4em; padding-bottom: 2em"/>
+<img src={liveCodingGif} style="width: 100%; height: 100%; padding-left: 4em; padding-right: 4em; padding-bottom: 2em"/>
 
 ---
 
@@ -101,7 +113,14 @@ data={[["first", "array[0]"], ["toArray", "[...array]"], ["filter", "filter"], [
 
 ---
 
-<div style="width: 100%; height: 100%; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; background-image: url('//localhost:8008/assets/rxjs7.png')"></div>
+<div style={{
+    width: "100%",
+    height: "100%",
+    backgroundSize: "cover",
+    backgroundPosition: "50% 50%",
+    backgroundRepeat: "no-repeat",
+    backgroundImage: `url(${rxjs7Png})`
+}}></div>
 <Footer/>
 
 ---
@@ -157,7 +176,7 @@ data={[["first", "array[0]"], ["toArray", "[...array]"], ["filter", "filter"], [
 
 ---
 
-<TextSplit image="//localhost:8008/assets/practice.gif">
+<TextSplit image={practiceGif}>
 <h1> Practice with ... </h1>
 <ul>
     <li> Redo the same </li>
