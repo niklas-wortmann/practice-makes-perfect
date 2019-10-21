@@ -14,7 +14,7 @@
   "scripts": {
     "serve": "http-server -p 8008 --gzip",
     "start": "mdx-deck index.mdx",
-    "build": "mdx-deck build index.mdx",
+    "build": "mdx-deck build index.mdx --basepath=/practice-makes-perfect && mv public docs",
     "export:pdf": "website-pdf http://localhost:8000/print -o deck.pdf",
     "export:image": "npx capture-website-cli http://localhost:8000 --output=deck.png"
   },
