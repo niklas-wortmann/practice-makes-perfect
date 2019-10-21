@@ -1,6 +1,6 @@
 import { fromEvent, Subject, merge, interval, race, animationFrameScheduler } from 'rxjs';
 import { AfterContentInit, Component, ContentChildren, ElementRef, QueryList, OnInit, OnDestroy } from '@angular/core';
-import { map, takeLast, takeUntil, tap, switchMap,filter, mapTo, share, repeatWhen, observeOn } from 'rxjs/operators';
+import { map, takeLast, takeUntil, tap, switchMap, filter, mapTo, share, repeatWhen, observeOn } from 'rxjs/operators';
 
 import { CarouselItemDirective } from './carousel-item.directive';
 import { preventEventPropagation } from './util';
