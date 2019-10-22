@@ -29,7 +29,6 @@ const linkStyles = css`
     :hover {
         color: #00acee;
     }
-
 `
 
 export const Footer = (props) => (

@@ -42,5 +42,9 @@ export const Styles = () => (
     .primary {
       color: ${theme.colors.primary};
     }
+
+    .link {
+      text-decoration: none;
+      font-size: 1.5em;
   `} />
 );

@@ -8,9 +8,21 @@ import { CycleFlowDiagram } from "./components/CycleFlow";
 import { Quote } from "./components/Quote";
 import { Table } from "./components/Table";
 import { WebComponent } from "./components/WebComponent";
+import { End } from "./components/End";
 import { AnimationFrameExample } from "./components/AnimationFrameExample";
 import { theme as deckTheme, Styles, vsDarkReal } from "./theme";
 import { CodeSurfer } from "code-surfer"
+import { Head } from 'mdx-deck'
+
+<Head>
+  <title>RxJS - Practice makes Perfect</title>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@niklas_wortmann" />
+  <meta name="twitter:title" content="RxJS - Practice makes Perfect" />
+  <meta name="twitter:description" content="Do you want to know how to get into RxJS and especially reactive programming? Check out this presentation." />
+  <meta name="twitter:image" content="https://example.com/card.png" />
+</Head>
+
 export const theme = deckTheme;
 
 import bicycleGif from './assets/bicycle-first-try.gif'
@@ -20,7 +32,9 @@ import liveCodingGif from './assets/live-coding.gif';
 import rxjs7Png from './assets/rxjs7.png';
 import practiceGif from './assets/practice.gif';
 
+
 <Styles />
+
 <Title/>
 <Footer/>
 
@@ -31,7 +45,7 @@ import practiceGif from './assets/practice.gif';
 
 ---
 
-# After a While
+<h1> After a While </h1>
 <Footer/>
 
 ---
@@ -45,7 +59,7 @@ import practiceGif from './assets/practice.gif';
 
 ---
 
-# About Me
+<h1> About Me </h1>
 <Footer/>
 
 ---
@@ -104,11 +118,12 @@ data={[["first", "array[0]"], ["toArray", "[...array]"], ["filter", "filter"], [
 
 ---
 
-# Summary of live coding
+<h1> Summary of live coding </h1>
 
 ---
 
-# What about V7 and beyond
+<Styles />
+<h1> What about <span class="primary">V7</span> and beyond </h1>
 <Footer/>
 
 ---
@@ -189,7 +204,11 @@ data={[["first", "array[0]"], ["toArray", "[...array]"], ["filter", "filter"], [
 
 ---
 
-# Thanks a lot for having me
-<Footer/>
+<Styles />
+<a href="http://bit.ly/rxjs-practice-makes-perfect" target="_blank" class="link">http://bit.ly/rxjs-practice-makes-perfect</a>
+
+---
+
+<End />
 
 ---

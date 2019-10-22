@@ -23,6 +23,7 @@ const headlineStyle = css`
     justify-self: center;
     align-self: center;
     text-align: center;
+    padding: 20px;
 `
 
 export const ImageSplit = (props) => (
