@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "package": "cat dist/carousel/{runtime,polyfills,scripts,main}.js | gzip > ../../assets/elements.js.gz",
+    "package": "cat dist/carousel/{runtime,polyfills,scripts,main}.js > ../../assets/elements.js",
     "bundle": "ng build --prod --output-hashing=none && npm run package"
   },
   "private": true,

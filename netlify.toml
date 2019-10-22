@@ -2,3 +2,7 @@
   publish = "docs/"
   command = "echo 'default context'"
 
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
