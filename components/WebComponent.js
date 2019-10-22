@@ -19,7 +19,6 @@ const webcomponentStyles = css`
 export const WebComponent = () => (
 <div css={containerStyles}>
     <Helmet>
-        <script type="text/javascript" src="https://unpkg.com/zone.js"></script>
         <script type="text/javascript" src='./static/elements.js'></script>
     </Helmet>
     <rxjs-slider css={webcomponentStyles}></rxjs-slider>

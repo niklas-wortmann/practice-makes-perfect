@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "package": "cat dist/carousel/{runtime,polyfills,scripts,main}.js >> ./../../docs/static/elements.js",
-    "bundle": "ng build --output-hashing=none && node ./concat-build.js && cp ./dist/elements.js ./../../docs/static/"
+    "bundle": "ng build --prod --output-hashing=none && node ./concat-build.js && cp ./dist/elements.js ./../../docs/static/"
   },
   "private": true,
   "dependencies": {

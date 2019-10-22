@@ -2,7 +2,7 @@ var concat = require('concat');
 
 const files = [
     './dist/carousel/runtime.js',
-    './dist/carousel/polyfills.js',
+    './dist/carousel/es2015-polyfills.js',
     './dist/carousel/scripts.js',
     './dist/carousel/main.js'
 ]

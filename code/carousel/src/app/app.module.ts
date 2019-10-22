@@ -20,7 +20,7 @@ export class AppModule {
 
   constructor(private injector: Injector) {
     const el = createCustomElement(AppComponent, { injector });
-    customElements.define('rxjs-slider', el);
+    if (!customElements.get('rxjs-slider')) customElements.define('rxjs-slider', el);
   }
   ngDoBootstrap() { }
 
