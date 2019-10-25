@@ -1,9 +1,20 @@
-import { fromEvent, Subject, merge, interval, race, animationFrameScheduler } from 'rxjs';
+import {fromEvent, Subject, merge, interval, race, animationFrameScheduler, EMPTY, pipe} from 'rxjs';
 import { AfterContentInit, Component, ContentChildren, ElementRef, QueryList, OnInit, OnDestroy } from '@angular/core';
 import { map, takeLast, takeUntil, tap, switchMap, filter, mapTo, share, repeatWhen, observeOn } from 'rxjs/operators';
 
 import { CarouselItemDirective } from './carousel-item.directive';
 import { preventEventPropagation } from './util';
+
+const calculateDelta = (startEvent, items) => pipe(
+  map((event: any) => event.pageX),
+  map((pageX) => Math.round(startEvent.pageX - pageX)),
+  tap(data => {
+    items.forEach(item => {
+      const delta = this.DELTA_DIRECTION_COEFFICIENT * ((this.active - 1) * this.el.nativeElement.firstChild.clientWidth) - data;
+      this.animateCarouselItem(item, delta, null);
+    });
+  })
+);
 
 @Component({
   selector: 'app-carousel',
@@ -59,23 +70,9 @@ export class CarouselComponent implements OnInit, AfterContentInit, OnDestroy {
       fromEvent(nativeElement, 'mousemove').pipe(
         preventEventPropagation
       )
-    ).pipe(
-      observeOn(animationFrameScheduler),
-      takeUntil(race(fromEvent(nativeElement, 'touchend'), fromEvent(nativeElement, 'mouseup'))),
-      map((event) => event.pageX),
-      map((pageX) => Math.round(startEvent.pageX - pageX)),
-      tap(data => {
-        items.forEach(item => {
-          const delta = this.DELTA_DIRECTION_COEFFICIENT * ((this.active - 1) * this.el.nativeElement.firstChild.clientWidth) - data;
-          this.animateCarouselItem(item, delta, null);
-        });
-      }),
-      takeLast(1)
-    );
+    ).pipe( );
 
-    const swipe$ = touchStart$.pipe(
-      switchMap((startEvent: TouchEvent) => touchMove$(startEvent)),
-    );
+    const swipe$ = touchStart$.pipe( );
 
     const leftArrow$ = EMPTY;
 
@@ -117,7 +114,7 @@ export class CarouselComponent implements OnInit, AfterContentInit, OnDestroy {
     this.destroyed$.complete();
   }
 
-  private animateBackToFirstSlide() {
+  private animateBackToFirstSlide(items) {
     if (this.active >= items.length) {
       this.active = 0;
       items.forEach(item => {
