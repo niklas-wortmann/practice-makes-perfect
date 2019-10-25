@@ -152,8 +152,8 @@ data={[["Hallo", "hello"], ["Banane", "banana"], ["Code", "code"], ["Kindergarte
 
 <Styles />
 <main>
-<Table titleLeft="Reactive" titleRight="Imperative" 
-data={[["first", "array[0]"], ["toArray", "[...array]"], ["filter", "filter"], ["map", "map"], ["windowToggle", "¯\\_(ツ)_/¯", "???"], ["dematerialize", "¯\\_(ツ)_/¯" ,"???"]]}/>
+<Table titleLeft="Imperative" titleRight="Reactive" 
+data={[["array[0]", "first"], ["[...array]", "toArray"], ["filter", "filter"], ["map", "map"], ["getData()", "¯\\_(ツ)_/¯", "getData().subscribe()"], ["if", "¯\\_(ツ)_/¯" ,"???"]]}/>
 <Footer/>
 </main>
 
@@ -371,6 +371,16 @@ role="img" aria-label="mindmap with new features in rxjs 7 which are improved ty
 <div style="display: flex; flex-direction: column; height: 100%; align-items: center">
 <h1> Show it to me</h1>
 <AnimationFrameExample/>
+</div>
+<Footer/>
+</main>
+
+---
+
+<Styles />
+<main>
+<div style="display: flex; flex-direction: column; height: 100%; align-items: center">
+<h1>Summary</h1>
 </div>
 <Footer/>
 </main>
