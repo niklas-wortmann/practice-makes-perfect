@@ -29,6 +29,6 @@ const headlineStyle = css`
 export const ImageSplit = (props) => (
     <div css={!props.reverse ? containerStyles : containerStylesReverse}>
       <h1 css={{...flexItemStyle, ...headlineStyle}}>{props.title}</h1>
-      <img css={flexItemStyle} src={props.image}/>
+      <img css={flexItemStyle} src={props.image} alt={props.alt}/>
     </div> 
   );

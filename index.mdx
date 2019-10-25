@@ -10,6 +10,7 @@ import { Table } from "./components/Table";
 import { WebComponent } from "./components/WebComponent";
 import { End } from "./components/End";
 import { AnimationFrameExample } from "./components/AnimationFrameExample";
+import { ManipulateHead } from "./components/ManipulateHead";
 import { theme as deckTheme, Styles, vsDarkReal } from "./theme";
 import { CodeSurfer } from "code-surfer"
 import { Head } from 'mdx-deck'
@@ -20,8 +21,16 @@ import { Head } from 'mdx-deck'
   <meta name="twitter:site" content="@niklas_wortmann" />
   <meta name="twitter:title" content="RxJS - Practice makes Perfect" />
   <meta name="twitter:description" content="Do you want to know how to get into RxJS and especially reactive programming? Check out this presentation." />
-  <meta name="twitter:image" content="https://example.com/card.png" />
+  <meta name="twitter:image" content="./assets/social-image.png" />
+  <meta name="twitter:image:src" content="./assets/social-image.png" />
+  <meta name="description" content="Do you want to know how to get into RxJS and especially reactive programming? Check out this presentation." />
+  <meta property="og:title" content="RxJS - Practice makes Perfect" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="REPLACE ME WITH PROPER URL" />
+  <meta property="og:image" content="./assets/social-image.png" />
+  <meta property="og:descrtiption" content="Do you want to know how to get into RxJS and especially reactive programming? Check out this presentation." />
 </Head>
+<ManipulateHead />
 
 export const theme = deckTheme;
 
@@ -34,41 +43,67 @@ import practiceGif from './assets/practice.gif';
 
 
 <Styles />
-
+<main>
 <Title/>
 <Footer/>
+</main>
 
 ---
 
-<ImageSplit title="Do you remember?" image={bicycleGif}/>
+<Styles />
+<main>
+<ImageSplit title="Do you remember?" image={bicycleGif} alt="a little child trying to ride a bike for the first time and failing unfortunately"/>
 <Footer/>
+</main>
 
 ---
-
+<Styles />
+<main>
+<div style={{display: 'flex', width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center'}}>
 <h1> After a While </h1>
+</div>
 <Footer/>
+</main>
 
 ---
 
-<img src={bicyclePerfectGif} style="width: 100%; height: 100%; padding: 40px"/>
+<Styles />
+<main>
+<img src={bicyclePerfectGif} alt="a little girl riding a bike and drift perfectly around a corner" style="width: 100%; height: 100%; padding: 40px"/>
+</main>
 
 ---
 
+<Styles />
+<main>
+<div style={{display: 'flex', width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center'}}>
 <CycleFlowDiagram />
+</div>
 <Footer/>
+</main>
 
 ---
 
+<Styles />
+<main>
+<div style={{display: 'flex', width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center'}}>
 <h1> About Me </h1>
+</div>
 <Footer/>
+</main>
 
 ---
 
+<Styles />
+<main>
 <AboutMe />
 <Footer/>
+</main>
 
 ---
 
+<Styles />
+<main>
 <div style={{
     width: "100%",
     height: "100%", 
@@ -77,58 +112,186 @@ import practiceGif from './assets/practice.gif';
     backgroundRepeat: "no-repeat",
     backgroundImage: `url(${tagCloudPng})`
 }}></div>
-
----
-
-<Quote/>
-<Footer/>
+</main>
 
 ---
 
 <Styles />
-<Text>Have you ever <span class="primary" style="display: block">learned</span> a foreign language?</Text>
+<main>
+<div style={{display: 'flex', width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center'}}>
+<Quote/>
+</div>
 <Footer/>
+</main>
 
 ---
 
+<Styles />
+<main>
+<Styles />
+<div style={{display: 'flex', width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center'}}>
+<Text>Have you ever <span class="primary" style="display: block">learned</span> a foreign language?</Text>
+</div>
+<Footer/>
+</main>
+
+---
+
+<Styles />
+<main>
 <Table titleLeft="German" titleRight="English" 
 data={[["Hallo", "hello"], ["Banane", "banana"], ["Code", "code"], ["Kindergarten", "kindergarten"], ["Ohrwurm", "???", "ear worm"], ["Dreikäsehoch", "???","three cheese high"]]}/>
 <Footer/>
+</main>
 
 ---
 
+<Styles />
+<main>
 <Table titleLeft="Reactive" titleRight="Imperative" 
 data={[["first", "array[0]"], ["toArray", "[...array]"], ["filter", "filter"], ["map", "map"], ["windowToggle", "¯\\_(ツ)_/¯", "???"], ["dematerialize", "¯\\_(ツ)_/¯" ,"???"]]}/>
 <Footer/>
+</main>
 
 ---
 
 <Styles />
+<main>
+<div style={{display: 'flex', width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center'}}>
 <Text>Thinking <span class="primary">reactively</span> needs practice!</Text>
+</div>
 <Footer/>
-
----
-
-<h1>Live Coding Time</h1>
-<img src={liveCodingGif} style="width: 100%; height: 100%; padding-left: 4em; padding-right: 4em; padding-bottom: 2em"/>
-
----
-
-<WebComponent />
-
----
-
-<h1> Summary of live coding </h1>
-<Footer/>
+</main>
 
 ---
 
 <Styles />
-<h1> What about <span class="primary">V7</span> and beyond </h1>
-<Footer/>
+<main style={{textAlign: 'center'}}>
+<h1>Live Coding Time</h1>
+<img src={liveCodingGif} style="width: 100%; height: 100%; padding-left: 4em; padding-right: 4em; padding-bottom: 2em" alt="person furiously typing on the keyboard acting to be a professional software developer"/>
+</main>
 
 ---
 
+<Styles />
+<main>
+<WebComponent />
+</main>
+
+---
+
+<Styles />
+<main>
+<div style={{display: 'flex', width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center'}}>
+<h1> Summary of live coding </h1>
+</div>
+<Footer/>
+</main>
+
+---
+
+<Styles />
+<main>
+<CodeSurfer theme={vsDarkReal}>
+
+```ts 39:46 file=./code/carousel/src/app/carousel/carousel.component.ts title="The Swipe Feature"
+```
+
+```ts 76:79 file=./code/carousel/src/app/carousel/carousel.component.ts title="Reactive Carousel"
+```
+
+```ts 55:61 file=./code/carousel/src/app/carousel/carousel.component.ts title="Reactive Carousel"
+```
+
+```ts 63 file=./code/carousel/src/app/carousel/carousel.component.ts title="Reactive Carousel"
+```
+
+```ts 64 file=./code/carousel/src/app/carousel/carousel.component.ts title="Reactive Carousel"
+```
+
+```ts 65:72 file=./code/carousel/src/app/carousel/carousel.component.ts title="Reactive Carousel"
+```
+
+```ts 73 file=./code/carousel/src/app/carousel/carousel.component.ts title="Reactive Carousel"
+```
+
+```ts 90:92 file=./code/carousel/src/app/carousel/carousel.component.ts title="Reactive Carousel"
+```
+
+```ts 109:110 file=./code/carousel/src/app/carousel/carousel.component.ts title="Reactive Carousel"
+```
+
+```ts 111:122 file=./code/carousel/src/app/carousel/carousel.component.ts title="Reactive Carousel"
+```
+
+</CodeSurfer>
+</main>
+
+---
+
+<Styles />
+<main>
+<CodeSurfer theme={vsDarkReal}>
+
+```ts 80:84 file=./code/carousel/src/app/carousel/carousel.component.ts title="Add Keyboard Navigation"
+```
+
+```ts 85:89 file=./code/carousel/src/app/carousel/carousel.component.ts title="Add Keyboard Navigation"
+```
+
+```ts 31:32 file=./code/carousel/src/app/carousel/carousel.component.ts title="Add Keyboard Navigation"
+```
+
+```ts 90:92 file=./code/carousel/src/app/carousel/carousel.component.ts title="Add Keyboard Navigation"
+```
+
+```ts 109:110 file=./code/carousel/src/app/carousel/carousel.component.ts title="Reactive Carousel"
+```
+
+</CodeSurfer>
+</main>
+
+---
+
+<Styles />
+<main>
+<CodeSurfer theme={vsDarkReal}>
+
+```ts 94 file=./code/carousel/src/app/carousel/carousel.component.ts title="Add Timer"
+```
+
+```ts 95 file=./code/carousel/src/app/carousel/carousel.component.ts title="Add Timer"
+```
+
+```ts 96 file=./code/carousel/src/app/carousel/carousel.component.ts title="Add Timer"
+```
+
+```ts 105 file=./code/carousel/src/app/carousel/carousel.component.ts title="Add Timer"
+```
+
+```ts 97:104 file=./code/carousel/src/app/carousel/carousel.component.ts title="Add Timer"
+```
+
+```ts 109 file=./code/carousel/src/app/carousel/carousel.component.ts title="Add Timer"
+```
+
+</CodeSurfer>
+</main>
+
+---
+
+<Styles />
+<main>
+<div style={{display: 'flex', width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center'}}>
+<h1> What about <span class="primary">V7</span> and beyond </h1>
+</div>
+<Footer/>
+</main>
+
+---
+
+<Styles />
+<main>
 <div style={{
     width: "100%",
     height: "100%",
@@ -136,11 +299,15 @@ data={[["first", "array[0]"], ["toArray", "[...array]"], ["filter", "filter"], [
     backgroundPosition: "50% 50%",
     backgroundRepeat: "no-repeat",
     backgroundImage: `url(${rxjs7Png})`
-}}></div>
-<Footer/>
+}}
+role="img" aria-label="mindmap with new features in rxjs 7 which are improved typings, animationFrame Observable and preparation for the next version"
+></div>
+</main>
 
 ---
 
+<Styles />
+<main>
 <CodeSurfer theme={vsDarkReal}>
 
 ```ts 1:8 file=./code/typing-example.ts title="Improved Typings"
@@ -160,10 +327,13 @@ data={[["first", "array[0]"], ["toArray", "[...array]"], ["filter", "filter"], [
 
 </CodeSurfer>
 <Footer/>
+</main>
 
 
 ---
 
+<Styles />
+<main>
 <CodeSurfer theme={vsDarkReal}>
 
 ```ts 2:5 file=./code/animation-frame-example.ts title="AnimationFrame Observable"
@@ -180,19 +350,24 @@ data={[["first", "array[0]"], ["toArray", "[...array]"], ["filter", "filter"], [
 
 </CodeSurfer>
 <Footer/>
-
+</main>
 
 ---
 
+<Styles />
+<main>
 <div style="display: flex; flex-direction: column; height: 100%; align-items: center">
 <h1> Show it to me</h1>
 <AnimationFrameExample/>
 </div>
 <Footer/>
+</main>
 
 ---
 
-<TextSplit image={practiceGif}>
+<Styles />
+<main>
+<TextSplit image={practiceGif} alt="puppy practicing swimming">
 <h1> Practice with ... </h1>
 <ul>
     <li> Redo the same </li>
@@ -202,15 +377,23 @@ data={[["first", "array[0]"], ["toArray", "[...array]"], ["filter", "filter"], [
 </ul>
 </TextSplit>
 <Footer/>
+</main>
 
 ---
 
 <Styles />
+<main>
+<div style={{display: 'flex', width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center'}}>
 <a href="http://bit.ly/rxjs-practice-makes-perfect" target="_blank" class="link">http://bit.ly/rxjs-practice-makes-perfect</a>
+</div>
 <Footer/>
+</main>
 
 ---
 
+<Styles />
+<main>
 <End />
+</main>
 
 ---

@@ -26,7 +26,7 @@ const linkContainer = css`
   width: 100%;
   justify-content: center;
   align-items: center;
-  flex-direction: column
+  flex-direction: column !important;
 `;
 
 const urlStyles = css`

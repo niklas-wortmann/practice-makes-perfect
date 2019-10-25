@@ -13,6 +13,6 @@ const imageContainerStyle = css`
 
 
 export const CycleFlowDiagram = () => (
-    <div css={imageContainerStyle}>
+    <div css={imageContainerStyle} role="img" aria-label="tag cloud of rxjs terms">
     </div>
 );

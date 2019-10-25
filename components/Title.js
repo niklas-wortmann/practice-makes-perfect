@@ -10,11 +10,12 @@ const containerStyles = css`
   align-items: center;
   flex-direction: column;
   width: 100%;
+  height: 100%;
 `;
 
 const headlineStyles = css`
   margin-top: 0;
-  margin-block-end: auto;
+  margin-block-end: 0;
 `;
 
 const sublineStyles = css`

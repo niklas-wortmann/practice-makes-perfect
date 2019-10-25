@@ -42,7 +42,10 @@ export const Styles = () => (
     .primary {
       color: ${theme.colors.primary};
     }
-
+    main {
+      width: 100%;
+      height: 100%;
+    }
     .link {
       text-decoration: none;
       font-size: 1.5em;

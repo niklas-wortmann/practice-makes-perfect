@@ -107,19 +107,20 @@ export class CarouselComponent implements OnInit, AfterContentInit, OnDestroy {
 
 
     merge(events$, timer$).pipe(
-      takeUntil(this.destroyed$)
-    ).subscribe(val => {
-      if (val > this.moveThreshold && this.active < items.length) {
-        this.active++;
-      } else if (val < -1 * this.moveThreshold && this.active > 1) {
-        this.active--;
-      }
+      tap(val => {
+        if (val > this.moveThreshold && this.active < items.length) {
+          this.active++;
+        } else if (val < -1 * this.moveThreshold && this.active > 1) {
+          this.active--;
+        }
 
-      items.forEach(item => {
-        const delta = this.DELTA_DIRECTION_COEFFICIENT * ((this.active - 1) * this.el.nativeElement.firstChild.clientWidth);
-        this.animateCarouselItem(item, delta, 300);
-      });
-    });
+        items.forEach(item => {
+          const delta = this.DELTA_DIRECTION_COEFFICIENT * ((this.active - 1) * this.el.nativeElement.firstChild.clientWidth);
+          this.animateCarouselItem(item, delta, 300);
+        });
+      }),
+      takeUntil(this.destroyed$)
+    ).subscribe();
   }
 
   private animateCarouselItem(item: CarouselItemDirective, delta?: number, transitionTime?: number): void {
