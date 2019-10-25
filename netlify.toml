@@ -6,3 +6,9 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+[[redirects]]
+  from = "https://nervous-shannon-3e2011.netlify.com/*"
+  to = "https://rxjs-practice-makes-perfect.dev/:splat" 
+  status = 301
+  force = true
