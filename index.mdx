@@ -9,6 +9,7 @@ import { Quote } from "./components/Quote";
 import { Table } from "./components/Table";
 import { WebComponent } from "./components/WebComponent";
 import { End } from "./components/End";
+import { Links } from "./components/Links";
 import { AnimationFrameExample } from "./components/AnimationFrameExample";
 import { ManipulateHead } from "./components/ManipulateHead";
 import { theme as deckTheme, Styles, vsDarkReal } from "./theme";
@@ -200,64 +201,40 @@ data={[["array[0]", "first"], ["[...array]", "toArray"], ["filter", "filter"], [
 <main>
 <CodeSurfer theme={vsDarkReal}>
 
-```ts 39:46 file=./code/carousel/src/app/carousel/carousel.component.ts title="The Swipe Feature"
+```ts 61:68 file=./code/carousel/src/app/carousel/carousel.component.ts title="The Swipe Feature"
 ```
 
-```ts 76:79 file=./code/carousel/src/app/carousel/carousel.component.ts title="Map To move observable"
+```ts 104:107 file=./code/carousel/src/app/carousel/carousel.component.ts title="Map To move observable"
 ```
 
-```ts 55:61 file=./code/carousel/src/app/carousel/carousel.component.ts title="Combine touch and mouse move"
+```ts 77:83 file=./code/carousel/src/app/carousel/carousel.component.ts title="Combine touch and mouse move"
 ```
 
-```ts 63 file=./code/carousel/src/app/carousel/carousel.component.ts title="Performance Tweak by using animationFrameScheduler"
+```ts 85 file=./code/carousel/src/app/carousel/carousel.component.ts title="Performance Tweak by using animationFrameScheduler"
 ```
 
-```ts 64 file=./code/carousel/src/app/carousel/carousel.component.ts title="don't forget to unsubscribe"
+```ts 86:91 file=./code/carousel/src/app/carousel/carousel.component.ts title="don't forget to unsubscribe"
 ```
 
-```ts 65:72 file=./code/carousel/src/app/carousel/carousel.component.ts title="Animate according to move delta"
+```ts 92:101 file=./code/carousel/src/app/carousel/carousel.component.ts title="Animate according to move delta"
 ```
 
-```ts 73 file=./code/carousel/src/app/carousel/carousel.component.ts title="End Observable and emit last value"
+```ts 102 file=./code/carousel/src/app/carousel/carousel.component.ts title="End Observable and emit last value"
 ```
 
-```ts 90:92 file=./code/carousel/src/app/carousel/carousel.component.ts title="Merge and share all event observables"
+```ts 119:122 file=./code/carousel/src/app/carousel/carousel.component.ts title="Merge and share all event observables"
 ```
 
-```ts 109 file=./code/carousel/src/app/carousel/carousel.component.ts title="prepare merge of event and timer observable"
+```ts 138 file=./code/carousel/src/app/carousel/carousel.component.ts title="prepare merge of event and timer observable"
 ```
 
-```ts 110:121 file=./code/carousel/src/app/carousel/carousel.component.ts title="Animate to next slide"
+```ts 139:152 file=./code/carousel/src/app/carousel/carousel.component.ts title="Animate to next slide"
 ```
 
-```ts 122 file=./code/carousel/src/app/carousel/carousel.component.ts title="Don't forget to unsubscribe"
+```ts 153 file=./code/carousel/src/app/carousel/carousel.component.ts title="Don't forget to unsubscribe"
 ```
 
-```ts 123 file=./code/carousel/src/app/carousel/carousel.component.ts title="Don't forget to subscribe!"
-```
-
-</CodeSurfer>
-</main>
-
----
-
-<Styles />
-<main>
-<CodeSurfer theme={vsDarkReal}>
-
-```ts 80:84 file=./code/carousel/src/app/carousel/carousel.component.ts title="Add Keyboard Navigation for left arrow"
-```
-
-```ts 85:89 file=./code/carousel/src/app/carousel/carousel.component.ts title="Add Keyboard Navigation for right arrow"
-```
-
-```ts 31:32 file=./code/carousel/src/app/carousel/carousel.component.ts title="map to proper value"
-```
-
-```ts 90:92 file=./code/carousel/src/app/carousel/carousel.component.ts title="merge into observable"
-```
-
-```ts 109 file=./code/carousel/src/app/carousel/carousel.component.ts title="event observables triggers"
+```ts 154 file=./code/carousel/src/app/carousel/carousel.component.ts title="Don't forget to subscribe!"
 ```
 
 </CodeSurfer>
@@ -269,22 +246,46 @@ data={[["array[0]", "first"], ["[...array]", "toArray"], ["filter", "filter"], [
 <main>
 <CodeSurfer theme={vsDarkReal}>
 
-```ts 94 file=./code/carousel/src/app/carousel/carousel.component.ts title="Add interval for initial delay"
+```ts 109:112 file=./code/carousel/src/app/carousel/carousel.component.ts title="Add Keyboard Navigation for left arrow"
 ```
 
-```ts 95 file=./code/carousel/src/app/carousel/carousel.component.ts title="unsubscribe when an event is emitted"
+```ts 114:118 file=./code/carousel/src/app/carousel/carousel.component.ts title="Add Keyboard Navigation for right arrow"
 ```
 
-```ts 96 file=./code/carousel/src/app/carousel/carousel.component.ts title="resubscribe in that case"
+```ts 53:54 file=./code/carousel/src/app/carousel/carousel.component.ts title="map to proper value"
 ```
 
-```ts 105 file=./code/carousel/src/app/carousel/carousel.component.ts title="Go to next page"
+```ts 119:121 file=./code/carousel/src/app/carousel/carousel.component.ts title="merge into observable"
 ```
 
-```ts 97:104 file=./code/carousel/src/app/carousel/carousel.component.ts title="Go to first page when exceeding"
+```ts 138 file=./code/carousel/src/app/carousel/carousel.component.ts title="event observables triggers"
 ```
 
-```ts 109 file=./code/carousel/src/app/carousel/carousel.component.ts title="timer observable triggers"
+</CodeSurfer>
+</main>
+
+---
+
+<Styles />
+<main>
+<CodeSurfer theme={vsDarkReal}>
+
+```ts 123 file=./code/carousel/src/app/carousel/carousel.component.ts title="Add interval for initial delay"
+```
+
+```ts 124 file=./code/carousel/src/app/carousel/carousel.component.ts title="unsubscribe when an event is emitted"
+```
+
+```ts 125 file=./code/carousel/src/app/carousel/carousel.component.ts title="resubscribe in that case"
+```
+
+```ts 134 file=./code/carousel/src/app/carousel/carousel.component.ts title="Go to next page"
+```
+
+```ts 126:133 file=./code/carousel/src/app/carousel/carousel.component.ts title="Go to first page when exceeding"
+```
+
+```ts 138 file=./code/carousel/src/app/carousel/carousel.component.ts title="timer observable triggers"
 ```
 
 </CodeSurfer>
@@ -405,9 +406,7 @@ role="img" aria-label="mindmap with new features in rxjs 7 which are improved ty
 
 <Styles />
 <main>
-<div style={{display: 'flex', width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center'}}>
-<a href="https://rxjs-practice-makes-perfect.dev" target="_blank" class="link">https://rxjs-practice-makes-perfect.dev</a>
-</div>
+<Links />
 <Footer/>
 </main>
 

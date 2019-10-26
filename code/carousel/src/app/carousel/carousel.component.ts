@@ -1,6 +1,25 @@
 import { fromEvent, Subject, merge, interval, race, animationFrameScheduler } from 'rxjs';
-import { AfterContentInit, Component, ContentChildren, ElementRef, QueryList, OnInit, OnDestroy } from '@angular/core';
-import { map, takeLast, takeUntil, tap, switchMap, filter, mapTo, share, repeatWhen, observeOn } from 'rxjs/operators';
+import {
+  AfterContentInit,
+  Component,
+  ContentChildren,
+  ElementRef,
+  QueryList,
+  OnInit,
+  OnDestroy
+} from '@angular/core';
+import {
+  map,
+  takeLast,
+  takeUntil,
+  tap,
+  switchMap,
+  filter,
+  mapTo,
+  share,
+  repeatWhen,
+  observeOn
+} from 'rxjs/operators';
 
 import { CarouselItemDirective } from './carousel-item.directive';
 import { preventEventPropagation } from './util';
@@ -10,12 +29,14 @@ import { preventEventPropagation } from './util';
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss']
 })
-export class CarouselComponent implements OnInit, AfterContentInit, OnDestroy {
+export class CarouselComponent implements
+  OnInit, AfterContentInit, OnDestroy {
 
-  @ContentChildren(CarouselItemDirective) carouselItems: QueryList<CarouselItemDirective>;
+  @ContentChildren(CarouselItemDirective) carouselItems:
+    QueryList<CarouselItemDirective>;
 
   private readonly DELTA_DIRECTION_COEFFICIENT = -1;
-  private readonly MOVE_THRESHOLD_IN_PERCENT = 15;
+  private readonly MOVE_THRESHOLD = 15;
   private moveThreshold = 0;
   private goToPrevPage = 0;
   private goToNextPage = 0;
@@ -27,7 +48,8 @@ export class CarouselComponent implements OnInit, AfterContentInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.moveThreshold = (this.el.nativeElement.firstChild.clientWidth * this.MOVE_THRESHOLD_IN_PERCENT) / 100;
+    const clientWidth = this.el.nativeElement.firstChild.clientWidth;
+    this.moveThreshold = (clientWidth * this.MOVE_THRESHOLD) / 100;
     this.goToPrevPage = -1 * this.moveThreshold - 1;
     this.goToNextPage = this.moveThreshold + 1;
   }
@@ -61,12 +83,19 @@ export class CarouselComponent implements OnInit, AfterContentInit, OnDestroy {
       )
     ).pipe(
       observeOn(animationFrameScheduler),
-      takeUntil(race(fromEvent(nativeElement, 'touchend'), fromEvent(nativeElement, 'mouseup'))),
+      takeUntil(
+        race(
+          fromEvent(nativeElement, 'touchend'),
+          fromEvent(nativeElement, 'mouseup')
+        )
+      ),
       map((event) => event.pageX),
       map((pageX) => Math.round(startEvent.pageX - pageX)),
       tap(data => {
         items.forEach(item => {
-          const delta = this.DELTA_DIRECTION_COEFFICIENT * ((this.active - 1) * this.el.nativeElement.firstChild.clientWidth) - data;
+          const delta = this.DELTA_DIRECTION_COEFFICIENT *
+            ((this.active - 1) *
+              this.el.nativeElement.firstChild.clientWidth) - data;
           this.animateCarouselItem(item, delta, null);
         });
       }),
@@ -115,7 +144,9 @@ export class CarouselComponent implements OnInit, AfterContentInit, OnDestroy {
         }
 
         items.forEach(item => {
-          const delta = this.DELTA_DIRECTION_COEFFICIENT * ((this.active - 1) * this.el.nativeElement.firstChild.clientWidth);
+          const delta = this.DELTA_DIRECTION_COEFFICIENT *
+            ((this.active - 1) *
+              this.el.nativeElement.firstChild.clientWidth);
           this.animateCarouselItem(item, delta, 300);
         });
       }),
@@ -123,7 +154,11 @@ export class CarouselComponent implements OnInit, AfterContentInit, OnDestroy {
     ).subscribe();
   }
 
-  private animateCarouselItem(item: CarouselItemDirective, delta?: number, transitionTime?: number): void {
+  private animateCarouselItem(
+    item: CarouselItemDirective,
+    delta?: number,
+    transitionTime?: number
+  ): void {
     if (!!transitionTime) {
       item.setTransition(transitionTime);
     }

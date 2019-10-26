@@ -5,17 +5,6 @@ import { map, takeLast, takeUntil, tap, switchMap, filter, mapTo, share, repeatW
 import { CarouselItemDirective } from './carousel-item.directive';
 import { preventEventPropagation } from './util';
 
-const calculateDelta = (startEvent, items) => pipe(
-  map((event: any) => event.pageX),
-  map((pageX) => Math.round(startEvent.pageX - pageX)),
-  tap(data => {
-    items.forEach(item => {
-      const delta = this.DELTA_DIRECTION_COEFFICIENT * ((this.active - 1) * this.el.nativeElement.firstChild.clientWidth) - data;
-      this.animateCarouselItem(item, delta, null);
-    });
-  })
-);
-
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
@@ -121,5 +110,18 @@ export class CarouselComponent implements OnInit, AfterContentInit, OnDestroy {
         this.animateCarouselItem(item, 0, 300);
       });
     }
+  }
+
+  private calculateDelta(startEvent, items){
+    return pipe(
+      map((event: any) => event.pageX),
+      map((pageX) => Math.round(startEvent.pageX - pageX)),
+      tap(data => {
+        items.forEach(item => {
+          const delta = this.DELTA_DIRECTION_COEFFICIENT * ((this.active - 1) * this.el.nativeElement.firstChild.clientWidth) - data;
+          this.animateCarouselItem(item, delta, null);
+        });
+      })
+    );
   }
 }
