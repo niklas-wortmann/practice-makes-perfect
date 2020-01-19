@@ -39,7 +39,7 @@ export const AboutMe = (props) => (
             <li>
                 <div css={listItemStyles} >
                     <span css={marginbasicstyles} >🖥</span>
-                    <span>Developer</span>
+                    <span>Self-Employed Consultant</span>
                 </div>
             </li>
             <li>

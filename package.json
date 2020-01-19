@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "code-surfer": "^3.0.0-beta.1",
+    "code-surfer": "^3.0.0-beta.2",
     "d3": "5.12.0",
     "d3-scale": "^3.1.0",
     "file-loader": "^4.2.0",
@@ -10,7 +10,7 @@
     "mdx-deck": "3.0.0",
     "raw-loader": "^3.1.0",
     "react-helmet": "^5.2.1",
-    "rxjs": "^7.0.0-alpha.0",
+    "rxjs": "^7.0.0-alpha.1",
     "website-pdf": "3.0.8"
   },
   "name": "rxjs-practice-makes-perfect",
@@ -18,7 +18,7 @@
     "serve": "http-server -p 8008 --gzip",
     "start": "mdx-deck index.mdx",
     "test": "echo \"there are no tests\"",
-    "build": "mdx-deck  build index.mdx --basePath=\"/practice-makes-perfect/\" && rm -rf docs && mv public docs && cp assets/social-image.png docs/static && npm run bundle --prefix ./code/carousel/",
+    "build": "mdx-deck  build index.mdx --basePath=\"/practice-makes-perfect/\" && cp assets/social-image.png public/static && npm run bundle --prefix ./code/carousel/",
     "export:pdf": "website-pdf http://localhost:8000/print -o deck.pdf",
     "export:image": "npx capture-website-cli http://localhost:8000 --output=deck.png",
     "publish-deck": "gh-pages -d docs"
