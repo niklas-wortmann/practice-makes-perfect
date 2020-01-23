@@ -6,6 +6,8 @@ import twitterSvg from './../assets/twitter.svg';
 import githubSvg from './../assets/github.svg';
 import devToSvg from './../assets/dev-dot-to.svg';
 import thankYou from './../assets/thank-you.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const containerStyles = css`
   display: flex;
@@ -87,6 +89,10 @@ export const End = () => (
         <div>
           <div css={twitterIconStyle}></div>
           <a href="https://twitter.com/niklas_wortmann" target="_blank" css={linkStyles}>@niklas_wortmann</a>
+        </div>
+        <div>
+          <FontAwesomeIcon icon={faEnvelope} style={{fontSize: '35px', marginRight: "20px"}}/>
+          <a href="mailto:jan@niklas-wortmann.com" css={linkStyles}>jan@niklas-wortmann.com</a> 
         </div>
         <div>
           <div css={devToIconStyle}></div>
