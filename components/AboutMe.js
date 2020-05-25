@@ -1,6 +1,8 @@
 import { css } from "@emotion/core";
 import { TextSplit } from "./TextSplit";
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTwitch } from '@fortawesome/free-brands-svg-icons';
 
 import meJpg from './../assets/about-me-min.jpg';
 import rxjsSvg from './../assets/rxjs-logo.svg';
@@ -29,7 +31,7 @@ const imagewidth = {
 const imagestyles = {...imagewidth, ...marginbasicstyles};
 
 const steakStyles = css`
-    margin-right: 15px;
+    margin-right: 8px;
 `;
 
 export const AboutMe = (props) => (
@@ -38,20 +40,26 @@ export const AboutMe = (props) => (
         <ul css={listContainerStyles} >
             <li>
                 <div css={listItemStyles} >
-                    <span css={marginbasicstyles} >🖥</span>
-                    <span>Self-Employed Consultant</span>
+                    <span css={marginbasicstyles} >💻</span>
+                    <span css={{marginLeft: '6px'}}>Self-Employed Consultant</span>
                 </div>
             </li>
             <li>
                 <div css={listItemStyles}>
                     <img src={rxjsSvg} css={imagestyles} />
-                    <span>Core Team Member</span>
+                    <span css={{marginLeft: '10px'}}>Core Team Member</span>
+                </div>
+            </li>
+            <li>
+                <div css={{ listItemStyles, ...{display: 'flex', alignItems: 'center'} }} >
+                    <FontAwesomeIcon icon={faTwitch} style={{ marginbasicstyles, ...{ width: '64px' } }}/>
+                    <span css={{marginLeft: '6px'}}>CraftprogrammTV</span>
                 </div>
             </li>
             <li>
                 <div css={listItemStyles}>
                     <img src={angularSvg} css={imagestyles} />
-                    <span>Meetup Organizer</span>
+                    <span css={{marginLeft: '10px'}}>Meetup Organizer</span>
                 </div>
             </li>
             <li>
