@@ -1,18 +1,47 @@
-import {fromEvent, Subject, merge, interval, race, animationFrameScheduler, EMPTY, pipe} from 'rxjs';
-import { AfterContentInit, Component, ContentChildren, ElementRef, QueryList, OnInit, OnDestroy } from '@angular/core';
-import { map, takeLast, takeUntil, tap, switchMap, filter, mapTo, share, repeatWhen, observeOn } from 'rxjs/operators';
+import {
+  fromEvent,
+  Subject,
+  merge,
+  interval,
+  race,
+  animationFrameScheduler,
+  EMPTY,
+  pipe
+} from "rxjs";
+import {
+  AfterContentInit,
+  Component,
+  ContentChildren,
+  ElementRef,
+  QueryList,
+  OnInit,
+  OnDestroy
+} from "@angular/core";
+import {
+  map,
+  takeLast,
+  takeUntil,
+  tap,
+  switchMap,
+  filter,
+  mapTo,
+  share,
+  repeatWhen,
+  observeOn
+} from "rxjs/operators";
 
-import { CarouselItemDirective } from './carousel-item.directive';
-import { preventEventPropagation } from './util';
+import { CarouselItemDirective } from "./carousel-item.directive";
+import { preventEventPropagation } from "./util";
 
 @Component({
-  selector: 'app-carousel',
-  templateUrl: './carousel.component.html',
-  styleUrls: ['./carousel.component.scss']
+  selector: "app-carousel",
+  templateUrl: "./carousel.component.html",
+  styleUrls: ["./carousel.component.scss"]
 })
 export class CarouselComponent implements OnInit, AfterContentInit, OnDestroy {
-
-  @ContentChildren(CarouselItemDirective) carouselItems: QueryList<CarouselItemDirective>;
+  @ContentChildren(CarouselItemDirective) carouselItems: QueryList<
+    CarouselItemDirective
+  >;
 
   private readonly DELTA_DIRECTION_COEFFICIENT = -1;
   private readonly MOVE_THRESHOLD_IN_PERCENT = 15;
@@ -23,8 +52,7 @@ export class CarouselComponent implements OnInit, AfterContentInit, OnDestroy {
 
   private destroyed$ = new Subject<void>();
 
-  constructor(private el: ElementRef) {
-  }
+  constructor(private el: ElementRef) {}
 
   ngOnInit(): void {
     this.moveThreshold = (this.el.nativeElement.firstChild.clientWidth * this.MOVE_THRESHOLD_IN_PERCENT) / 100;
@@ -89,12 +117,16 @@ export class CarouselComponent implements OnInit, AfterContentInit, OnDestroy {
     ).subscribe();
   }
 
-  private animateCarouselItem(item: CarouselItemDirective, delta?: number, transitionTime?: number): void {
+  private animateCarouselItem(
+    item: CarouselItemDirective,
+    delta?: number,
+    transitionTime?: number
+  ): void {
     if (!!transitionTime) {
       item.setTransition(transitionTime);
     }
     if (!!delta || delta === 0) {
-      item.setStyle('transform', `translateX(${delta}px)`);
+      item.setStyle("transform", `translateX(${delta}px)`);
     }
   }
 
@@ -112,13 +144,17 @@ export class CarouselComponent implements OnInit, AfterContentInit, OnDestroy {
     }
   }
 
-  private calculateDelta(startEvent, items){
+  private calculateDelta(startEvent, items) {
     return pipe(
       map((event: any) => event.pageX),
-      map((pageX) => Math.round(startEvent.pageX - pageX)),
+      map(pageX => Math.round(startEvent.pageX - pageX)),
       tap(data => {
         items.forEach(item => {
-          const delta = this.DELTA_DIRECTION_COEFFICIENT * ((this.active - 1) * this.el.nativeElement.firstChild.clientWidth) - data;
+          const delta =
+            this.DELTA_DIRECTION_COEFFICIENT *
+              ((this.active - 1) *
+                this.el.nativeElement.firstChild.clientWidth) -
+            data;
           this.animateCarouselItem(item, delta, null);
         });
       })
