@@ -41,7 +41,7 @@ export const AboutMe = (props) => (
             <li>
                 <div css={listItemStyles} >
                     <span css={marginbasicstyles} >💻</span>
-                    <span css={{marginLeft: '6px'}}>Self-Employed Consultant</span>
+                    <span css={{marginLeft: '6px'}}>Consultant @ EvoraIT</span>
                 </div>
             </li>
             <li>

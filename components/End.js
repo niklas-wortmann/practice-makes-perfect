@@ -90,7 +90,7 @@ export const End = () => (
         </div>
         <div>
           <div css={githubIconStyle}></div>
-          <a href="https://github.com/JWO719" target="_blank" css={linkStyles}>JWO719</a>
+          <a href="https://github.com/niklas-wortmann" target="_blank" css={linkStyles}>niklas-wortmann</a>
         </div>
       </div>
     </div>

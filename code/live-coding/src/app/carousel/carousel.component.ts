@@ -87,17 +87,38 @@ export class CarouselComponent implements OnInit, AfterContentInit, OnDestroy {
       fromEvent(nativeElement, 'mousemove').pipe(
         preventEventPropagation
       )
-    ).pipe( );
+    ).pipe( 
+      observeOn(animationFrameScheduler),
+      takeUntil(race(
+        fromEvent(nativeElement, 'mouseup'),
+        fromEvent(nativeElement, 'touchend'),
+      )),
+      this.calculateDelta(startEvent, items),
+      takeLast(1),
+    );
 
-    const swipe$ = touchStart$.pipe( );
+    const swipe$ = touchStart$.pipe(switchMap(event => touchMove$(event)));
 
-    const leftArrow$ = EMPTY;
+    const leftArrow$ = fromEvent(document, 'keydown').pipe(
+      filter((event: KeyboardEvent) => event.code === 'KeyA'),
+      mapTo(this.goToPrevPage),
+    );
 
-    const rightArrow$ = EMPTY;
+    const rightArrow$ = fromEvent(document, 'keydown').pipe(
+      filter((event: KeyboardEvent) => event.code === 'KeyD'),
+      mapTo(this.goToNextPage),
+    );;
 
-    const events$ =  EMPTY;
+    const events$ =  merge(swipe$, leftArrow$, rightArrow$).pipe(
+      share()
+    );
 
-    const timer$ = EMPTY;
+    const timer$ = interval(5000).pipe(
+      takeUntil(events$),
+      repeatWhen(notifier => notifier),
+      tap(value => this.animateBackToFirstSlide(items)),
+      mapTo(this.goToNextPage)
+    );
 
 
     merge(events$, timer$).pipe(
